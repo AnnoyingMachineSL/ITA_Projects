@@ -82,9 +82,9 @@ def progression(first_num: Union[int, float], dif: Union[int, float], operation:
         first_num = eval(f'{first_num}{operation}{dif}')
     return first_num
 
-print(progression(1, 3, '+', 4))
-print(progression(3, 2, '*', 5))
-print()
+# print(progression(1, 3, '+', 4))
+# print(progression(3, 2, '*', 5))
+# print()
 
 
 # 2. Напишите функцию, которая принимает предложение и определяет, заикается ли человек. Человек заикается,
@@ -105,9 +105,9 @@ def stutter(sting: str) -> Union[bool, str]:
         return 'Empty input'
 
 
-print(stutter('Я люблю ре решать задачки'))
-print(stutter('Мои любимые тны животные - собаки'))
-print()
+# print(stutter('Я люблю ре решать задачки'))
+# print(stutter('Мои любимые тны животные - собаки'))
+# print()
 
 
 
@@ -209,9 +209,55 @@ fraction2 = Fraction(1, 3)
 # fraction1 = Fraction(12, 15)
 # fraction2 = Fraction(4, 9)
 
-print(fraction1.add(fraction2))
-print(fraction1.substract(fraction2))
-print(fraction1.multiply(fraction2))
-print(fraction1.divide(fraction2))
-print(fraction1.to_decimal())
+# print(fraction1.add(fraction2))
+# print(fraction1.substract(fraction2))
+# print(fraction1.multiply(fraction2))
+# print(fraction1.divide(fraction2))
+# print(fraction1.to_decimal())
+
+
+def gena(num):
+    for i in range(2,num):
+        if easy_numbers(i):
+            yield i
+
+
+def easy_numbers(number):
+    for i in range(2, number-1):
+        if number % i == 0:
+            return False
+    return True
+
+
+a = gena(16)
+print(next(a))
+print(next(a))
+print(next(a))
+print(next(a))
+
+
+a = [10, 14, 100, 5, 0]
+b = [-15, -20, 11, 16, -16]
+
+
+def numbers(lst: list):
+    ans = []
+    ans.append(f"+{abs(lst[0] - lst[-1])}" if lst[-1] < lst[0] else f"-{abs(lst[0] - lst[-1])}")
+
+    for i in range(len(lst)-1):
+        if lst[i] < lst[i+1]:
+            ans.append(f'+{abs(lst[i] - lst[i+1])}')
+        else:
+            ans.append(f'-{abs(lst[i] - lst[i+1])}')
+
+    return ans
+
+#
+print(numbers(a))
+print(numbers(b))
+
+
+
+
+
 
