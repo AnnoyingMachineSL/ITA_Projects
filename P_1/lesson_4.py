@@ -111,7 +111,8 @@ def get_operation(first: int|float, second: int|float, result: int|float) -> str
 print(get_operation('2', 5, -3))
 print(get_operation([3], 5, -3))
 print(get_operation(88.8, 11.1, 8))
-
+print(get_operation(2, 3, 5))
+print()
 
 
 # Напишите декоратор, который будет выводить имя запускаемой функции. Это задачка на самостоятельный поиск информации!
@@ -124,3 +125,9 @@ def decorator(func):
         print(f'Method [{func.__name__}] running now!')
         func(*args, **kwargs)
     return wrapper
+
+@decorator
+def chototam(lst):
+    print(lst)
+
+chototam([1,2,3,4,5])
