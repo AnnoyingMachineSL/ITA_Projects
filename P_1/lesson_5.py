@@ -69,3 +69,5 @@ def phone_number(stg: str)-> str:
 
 
 print(phone_number('sad+qwe+37llk5_sdasd29ooppppef361-79sada-44'))
+
+
