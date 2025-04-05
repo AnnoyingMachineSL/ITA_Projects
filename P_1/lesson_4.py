@@ -131,3 +131,65 @@ def chototam(lst):
     print(lst)
 
 chototam([1,2,3,4,5])
+
+
+# i - не обращает внимание на регистр
+#\d == [0-9]
+
+# [a-z] - буквы
+# \d - числа
+# \w - буквы, числа, \_
+# \s - пробел
+
+# g - все совпадения
+# i - не обращать внимания на регистр
+
+# . - любой символ
+# \* - от нуля до бесконечности
+# \+ - от одного до бесконечности
+# ? - от нуля до одного
+
+
+# {0,} == \*
+# {1,} == +
+# {,1} == ?
+# {start,end}
+
+# ^ - начало строки
+# $ - конец строки
+
+# ^([a-z]+. \d+.)\*$
+
+# [^a-z] - всё кроме букв
+
+# кот(?=собака) - positive lookahead
+# кот(?!собака) - negative lookahead
+# (?<=кот)собака - positive lookbehind
+# (?<!кот)собака - negative lookbehind
+
+
+import re
+def repl_b(strig):
+    return re.sub('b', '*',strig) if len(strig) >=4 else 'Len string most by more 4'
+
+
+print(repl_b('aabc'))
+
+
+
+#Программа принимает строку с числом. Удали все пробелы из числа, но оставь пробелы между строк
+
+def find_elem(string):
+    return re.sub("(?<=\d)\s(?=\d)", '',string)
+
+
+print(find_elem('1 23 23 abs 123'))
+
+
+def repl_space(string):
+    if re.findall('^[a-z]{3}\d\s[^a-z0-9]$', string):
+        return re.sub('\s', string[-1], string)
+
+
+
+print(repl_space('aab4 ?'))
