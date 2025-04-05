@@ -58,16 +58,10 @@ print(abbreviation_words('Hello! I love dogs .'))
 # Напишите проверку телефонных номеров. Вам будет дана любая строка, сохранятся должен первый плюс и все цифры.
 # Если получившаяся строка соответствует шаблону /\+\d{10, 12}/, то выведите её, если нет, то выведите ошибку
 
-
-#sad+qwe+37llk5_sdasd29ooppppef361-79sada-44
-
 def phone_number(stg: str)-> str:
     pattern = '[+][0-9]{10,12}'
     ans = '+' + re.sub('[^0-9]|[a-z]]', '', stg)
     return(ans) if re.match(pattern, ans) != None else "Can't find a phone number!"
-
-
-
 print(phone_number('sad+qwe+37llk5_sdasd29ooppppef361-79sada-44'))
 
 
